@@ -204,7 +204,7 @@ public class JavaPasswordbasedCryption {
 
     private Cipher getCipher(SecretKey key, int encryptMode, byte[] nonce) throws
             NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException {
-        if (version == Version.V001 || version == Version.U001) {
+        if (version == Version.V002 || Version.V001 || version == Version.U001) {
             Cipher cipher = Cipher.getInstance(version.cipher);
             GCMParameterSpec spec = new GCMParameterSpec(16 * 8, nonce);
             cipher.init(encryptMode, key, spec);
@@ -240,6 +240,8 @@ public class JavaPasswordbasedCryption {
      */
     @SuppressWarnings("DeprecatedIsStillUsed")
     public enum Version {
+        V002("PBKDF2WithHmacSHA512", 210000, 256, "AES", 64, "AES/GCM/NoPadding", 32),  // OWASP recommendation as of 2024-11-12 https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2
+
         V001("PBKDF2WithHmacSHA512", 10000, 256, "AES", 64, "AES/GCM/NoPadding", 32),
 
         /**
