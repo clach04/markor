@@ -33,7 +33,7 @@ import javax.crypto.spec.SecretKeySpec;
  *     <li>nonce bytes - bytes as nonce for cipher depends. The length  on version.</li>
  *     <li>content bytes - the encrypted content-bytes.</li>
  * </ul>
- * This Class need Android KitKat to run om android devices.
+ * This Class need Android KitKat to run on android devices.
  */
 // COPIED FROM https://gitlab.com/opensource21/jpencconverter/-/blob/v0.2.1/src/main/java/de/stanetz/jpencconverter/cryption/JavaPasswordbasedCryption.java
 @SuppressWarnings("deprecation")
