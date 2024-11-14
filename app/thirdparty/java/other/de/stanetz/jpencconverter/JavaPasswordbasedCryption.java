@@ -29,9 +29,13 @@ import javax.crypto.spec.SecretKeySpec;
  *
  * <ul>
  *     <li>4 bytes - define the version.</li>
- *     <li>salt bytes - bytes to salt the password. The length depends on version.</li>
  *     <li>nonce bytes - bytes as nonce for cipher depends. The length  on version.</li>
- *     <li>content bytes - the encrypted content-bytes.</li>
+ *     <li>salt bytes - bytes to salt the password. The length depends on version.</li>
+ *     <li>content bytes - the encrypted content-bytes, with HMAC.</li>
+ *     <ul>
+ *         <li>content bytes - the encrypted payload</li>
+ *         <li>16 bytes - HMAC </li>
+ *     </ul>
  * </ul>
  * This Class need Android KitKat to run on android devices.
  */
