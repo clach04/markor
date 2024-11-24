@@ -204,7 +204,7 @@ public class JavaPasswordbasedCryption {
 
     private Cipher getCipher(SecretKey key, int encryptMode, byte[] nonce) throws
             NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException {
-        if (version == Version.V002 || Version.V001 || version == Version.U001) {
+        if (version == Version.V002 || version == Version.V001 || version == Version.U001) {
             Cipher cipher = Cipher.getInstance(version.cipher);
             GCMParameterSpec spec = new GCMParameterSpec(16 * 8, nonce);
             cipher.init(encryptMode, key, spec);
